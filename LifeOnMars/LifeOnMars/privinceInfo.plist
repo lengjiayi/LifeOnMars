@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Solis Lacus</key>
+	<string>太阳湖，又名火星之眼，一个火星上的暗区。被明亮的陶玛西亚包围着，如同一只眼睛。日落以后气温下降比别外慢得多，夜间也比周围区域温暖，据猜测存在活火山，并被认为是火星的首都</string>
+	<key>Arabia Terra</key>
+	<string>火星北部一个名为“阿拉比亚大陆”的平原，研究人员曾观察到长度超过1.7万公里的倒置河道</string>
+	<key>Olympus Mons</key>
+	<string>奥林匹斯山，又称奥林帕斯山，是火星上的盾状火山，亦为太阳系中已知最高的山，高于基准面21,229米，比地球上的珠穆朗玛峰高出两倍多</string>
+	<key>Valles Marineris</key>
+	<string>水手峡谷，火星最大的峡谷，也是太阳系最大最长的峡谷，长3769公里，最深处达7公里</string>
+	<key>Cydonia</key>
+	<string>一个有许多小丘陵的区域，因为有许多像人脸和金字塔的丘陵而被科学家注意</string>
+	<key>Planum Austrlate</key>
+	<string>火星上的南极高原，部分区域由厚度约3公里的水冰和干冰组成的永久冰帽覆盖，有时会有美丽的火星喷泉</string>
+</dict>
+</plist>
