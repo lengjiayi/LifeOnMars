@@ -14,7 +14,7 @@
 		184A93E621A18BAB007A77C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */; };
 		184A93F121A18BAB007A77C3 /* LifeOnMarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93F021A18BAB007A77C3 /* LifeOnMarsTests.swift */; };
 		184A93FC21A194FA007A77C3 /* launchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93FB21A194FA007A77C3 /* launchButton.swift */; };
-		1894C8C221A4394D00A2D23B /* privinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1894C8C121A4394D00A2D23B /* privinceInfo.plist */; };
+		1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1894C8C121A4394D00A2D23B /* provinceInfo.plist */; };
 		1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */; };
 		1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */; };
 		18EA5B3021A2D80E00E8E72C /* loginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA5B2F21A2D80E00E8E72C /* loginInfo.swift */; };
@@ -42,7 +42,7 @@
 		184A93F021A18BAB007A77C3 /* LifeOnMarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeOnMarsTests.swift; sourceTree = "<group>"; };
 		184A93F221A18BAB007A77C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		184A93FB21A194FA007A77C3 /* launchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchButton.swift; sourceTree = "<group>"; };
-		1894C8C121A4394D00A2D23B /* privinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = privinceInfo.plist; sourceTree = "<group>"; };
+		1894C8C121A4394D00A2D23B /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = provinceInfo.plist; sourceTree = "<group>"; };
 		1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewController.swift; sourceTree = "<group>"; };
 		1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewCell.swift; sourceTree = "<group>"; };
 		18EA5B2F21A2D80E00E8E72C /* loginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginInfo.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				18EA5B2F21A2D80E00E8E72C /* loginInfo.swift */,
 				1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */,
 				1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */,
-				1894C8C121A4394D00A2D23B /* privinceInfo.plist */,
+				1894C8C121A4394D00A2D23B /* provinceInfo.plist */,
 				184A93DF21A18BAB007A77C3 /* Main.storyboard */,
 				184A93E221A18BAB007A77C3 /* Assets.xcassets */,
 				184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */,
@@ -194,7 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1894C8C221A4394D00A2D23B /* privinceInfo.plist in Resources */,
+				1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */,
 				184A93E621A18BAB007A77C3 /* LaunchScreen.storyboard in Resources */,
 				184A93E321A18BAB007A77C3 /* Assets.xcassets in Resources */,
 				184A93E121A18BAB007A77C3 /* Main.storyboard in Resources */,

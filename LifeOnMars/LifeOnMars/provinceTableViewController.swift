@@ -12,9 +12,24 @@ class provinceTableViewController: UITableViewController {
 
     //MARK: Province names
     var provinceName = [String]()
+    var provinceInfo:NSMutableDictionary?
+    var selected:[Bool] = [false, false, false, false, false, false]               //current selected cell
+    var infoheight : [CGFloat] = [0,0,0,0,0,0]        //height of info string
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let path = Bundle.main.path(forResource: "provinceInfo", ofType: "plist"){
+            provinceInfo = NSMutableDictionary.init(contentsOfFile: path)!
+        }
+        else{
+            print("cannot find plistfile")
+        }
+        let imgback=UIImage(named:"infoviewbg")
+        
+        let imgbackV=UIImageView(image: imgback)
+        
+        self.tableView.backgroundView=imgbackV
+//        tableView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
         loadProvinces()
 
         // Uncomment the following line to preserve selection between presentations
@@ -38,21 +53,40 @@ class provinceTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return prnames.count
+        return provinceName.count
     }
 
-    
+    //init cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "provinceCell", for: indexPath) as? provinceTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "provinceCell", for: indexPath) as? provinceTableViewCell else {
             fatalError("The dequeued cell is not an instance of provinceTableViewCell.")
         }
         // Configure the cell...
         let pname = provinceName[indexPath.row]
-//        cell.title
+        cell.provinceLabel.text = pname
+        
+        let info = provinceInfo![pname]!
+        infoheight[indexPath.row] = cell.prepareInfo(info: info as! String)
+        
         return cell
     }
     
+    //change cell height
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
+        var height:CGFloat = 44
+        if(selected[indexPath.row]){
+            height += infoheight[indexPath.row]
+        }
+//        print(height)
+        return height
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected[indexPath.row] = !selected[indexPath.row]
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -99,7 +133,7 @@ class provinceTableViewController: UITableViewController {
     */
     
     //MARK: Private Method
-    private func loadSampleMeal(){
+    private func loadProvinces(){
         provinceName = ["Solis Lacus",
                    "Arabia Terra",
                    "Olympus Mons",
