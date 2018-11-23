@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OcD-Iw-WaR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,6 +36,7 @@
                     </view>
                     <connections>
                         <outlet property="imageMars" destination="IP5-Lf-0VC" id="5cG-R3-ZZM"/>
+                        <segue destination="OcD-Iw-WaR" kind="showDetail" identifier="showProvinceTableView" id="NPi-ZI-vUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,17 +46,24 @@
         <!--Province Table View Controller-->
         <scene sceneID="yKf-Im-K2w">
             <objects>
-                <tableViewController id="OcD-Iw-WaR" customClass="provinceTableViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="provinceTable" id="OcD-Iw-WaR" customClass="provinceTableViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Nr-ty-LlZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province On Mars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bD9-DP-jK2">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <color key="textColor" red="0.88202582465277779" green="0.90966796875" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="provinceCell" rowHeight="142" id="Mm6-a8-3xF" customClass="provinceTableViewCell" customModule="LifeOnMars" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="142"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="provinceCell" rowHeight="201" id="Mm6-a8-3xF" customClass="provinceTableViewCell" customModule="LifeOnMars" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mm6-a8-3xF" id="9T2-qs-JWq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDh-rf-bWa">
@@ -66,21 +74,29 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmW-cR-7sk">
-                                            <rect key="frame" x="22" y="60" width="42" height="21"/>
+                                            <rect key="frame" x="105" y="154" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="or4-xS-b8d">
-                                            <rect key="frame" x="294" y="55" width="31" height="30"/>
+                                            <rect key="frame" x="296" y="154" width="31" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="确定"/>
+                                            <connections>
+                                                <segue destination="C5Z-Oi-4CQ" kind="showDetail" identifier="showConnectionView" id="odW-Ze-yIy"/>
+                                            </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qy-2k-WEJ">
+                                            <rect key="frame" x="79" y="18" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="InfoLabel" destination="JmW-cR-7sk" id="K6q-12-DzD"/>
+                                    <outlet property="provinceImageView" destination="5Qy-2k-WEJ" id="Wmr-y7-uAU"/>
                                     <outlet property="provinceLabel" destination="NDh-rf-bWa" id="4TZ-U4-0xv"/>
                                     <outlet property="selectButton" destination="or4-xS-b8d" id="rlE-I7-unp"/>
                                 </connections>
@@ -95,6 +111,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV1-i9-Iga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="132.26600985221674"/>
+        </scene>
+        <!--Connection Table View Controller-->
+        <scene sceneID="IZb-vw-QAY">
+            <objects>
+                <viewController id="C5Z-Oi-4CQ" customClass="connectionTableViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TLQ-0u-m3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-8M-jVo">
+                                <rect key="frame" x="0.0" y="363" width="375" height="415"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eMm-8M-jVo" firstAttribute="leading" secondItem="gG1-8d-V5G" secondAttribute="leading" id="9FO-vr-lHj"/>
+                            <constraint firstItem="gG1-8d-V5G" firstAttribute="trailing" secondItem="eMm-8M-jVo" secondAttribute="trailing" id="A6c-do-nh7"/>
+                            <constraint firstItem="eMm-8M-jVo" firstAttribute="bottom" secondItem="gG1-8d-V5G" secondAttribute="bottom" id="F7N-Na-EW4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gG1-8d-V5G"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="eMm-8M-jVo" id="gcj-EJ-vaC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrJ-Nt-hbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8" y="131.52709359605913"/>
         </scene>
     </scenes>
     <resources>

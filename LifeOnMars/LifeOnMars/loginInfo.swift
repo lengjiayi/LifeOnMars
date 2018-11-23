@@ -72,7 +72,7 @@ class loginInfo: UIView , UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.restorationIdentifier! == "TFN"
         {
-            print("TFN")
+//            print("TFN")
             usrname = nameTextField.text ?? ""
             if(usrname.isEmpty){
                 return false

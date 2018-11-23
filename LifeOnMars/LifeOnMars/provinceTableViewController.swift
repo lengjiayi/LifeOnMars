@@ -10,6 +10,10 @@ import UIKit
 
 class provinceTableViewController: UITableViewController {
 
+    //MARK: Parameters from login view
+    var usrname : String = ""
+    var female : loginInfo.Sex = .Male
+    
     //MARK: Province names
     var provinceName = [String]()
     var provinceInfo:NSMutableDictionary?
@@ -18,12 +22,16 @@ class provinceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //load province detail info
         if let path = Bundle.main.path(forResource: "provinceInfo", ofType: "plist"){
             provinceInfo = NSMutableDictionary.init(contentsOfFile: path)!
         }
         else{
             print("cannot find plistfile")
         }
+
+        //set background image
         let imgback=UIImage(named:"infoviewbg")
         
         let imgbackV=UIImageView(image: imgback)
@@ -32,11 +40,6 @@ class provinceTableViewController: UITableViewController {
 //        tableView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
         loadProvinces()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,15 +125,17 @@ class provinceTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showConnectionView"{
+//            let nextView = segue.destination as! provinceTableViewController
+            print("prepare")
+        }
     }
-    */
+    
     
     //MARK: Private Method
     private func loadProvinces(){
