@@ -15,6 +15,8 @@ class provinceTableViewCell: UITableViewCell {
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var provinceImageView: UIImageView!
     
+    var father : provinceTableViewController? = nil
+    
     //MARK: properties
     let imageViewheight:CGFloat = 100
     var imageViewwidth:CGFloat = 0
@@ -27,8 +29,8 @@ class provinceTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        
     }
 
     //MARK: Actions
@@ -77,6 +79,13 @@ class provinceTableViewCell: UITableViewCell {
         selectButton.frame = CGRect(x: 0, y: 0, width: 80, height: 60)
         loc.x = 40 + InfoLabel.frame.width + selectButton.frame.width/2
         selectButton.center = loc
+        selectButton.addTarget(self, action: #selector(returnpname), for: .touchUpInside)
         return InfoLabel.frame.height + 16 + imageViewheight + 8
+    }
+    
+    @objc func returnpname()
+    {
+        father?.pname = provinceLabel.text!
+        father?.jumptonext()
     }
 }

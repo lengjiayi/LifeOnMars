@@ -13,7 +13,8 @@ class provinceTableViewController: UITableViewController {
     //MARK: Parameters from login view
     var usrname : String = ""
     var female : loginInfo.Sex = .Male
-    
+    var pname : String = ""
+
     //MARK: Province names
     var provinceName = [String]()
     var provinceInfo:NSMutableDictionary?
@@ -70,7 +71,7 @@ class provinceTableViewController: UITableViewController {
         
         let info = provinceInfo![pname]!
         infoheight[indexPath.row] = cell.prepareInfo(info: info as! String)
-        
+        cell.father = self
         return cell
     }
     
@@ -130,12 +131,20 @@ class provinceTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showConnectionView"{
-//            let nextView = segue.destination as! provinceTableViewController
-            print("prepare")
+        if segue.identifier == "showConnectView"{
+            let nextView = segue.destination as! connectionViewController
+            nextView.usrname = self.usrname
+            nextView.gender = self.female
+            nextView.province = pname
+
         }
     }
-    
+    //MARK: Actions
+    func jumptonext()
+    {
+//        print(pname)
+        self.performSegue(withIdentifier: "showConnectView", sender: "parameters")
+    }
     
     //MARK: Private Method
     private func loadProvinces(){

@@ -84,9 +84,6 @@
                                             <rect key="frame" x="296" y="154" width="31" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="确定"/>
-                                            <connections>
-                                                <segue destination="C5Z-Oi-4CQ" kind="showDetail" identifier="showConnectionView" id="odW-Ze-yIy"/>
-                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qy-2k-WEJ">
                                             <rect key="frame" x="79" y="18" width="240" height="128"/>
@@ -107,38 +104,28 @@
                             <outlet property="delegate" destination="OcD-Iw-WaR" id="vaZ-zM-hXO"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="rNM-dM-sGE" kind="showDetail" identifier="showConnectView" id="Tjx-0R-nUT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV1-i9-Iga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="132.26600985221674"/>
         </scene>
-        <!--Connection Table View Controller-->
-        <scene sceneID="IZb-vw-QAY">
+        <!--Connection View Controller-->
+        <scene sceneID="hj4-Hz-q5A">
             <objects>
-                <viewController id="C5Z-Oi-4CQ" customClass="connectionTableViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TLQ-0u-m3Z">
+                <viewController storyboardIdentifier="connectView" id="rNM-dM-sGE" customClass="connectionViewController" customModule="LifeOnMars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09u-vD-tMO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-8M-jVo">
-                                <rect key="frame" x="0.0" y="363" width="375" height="415"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="eMm-8M-jVo" firstAttribute="leading" secondItem="gG1-8d-V5G" secondAttribute="leading" id="9FO-vr-lHj"/>
-                            <constraint firstItem="gG1-8d-V5G" firstAttribute="trailing" secondItem="eMm-8M-jVo" secondAttribute="trailing" id="A6c-do-nh7"/>
-                            <constraint firstItem="eMm-8M-jVo" firstAttribute="bottom" secondItem="gG1-8d-V5G" secondAttribute="bottom" id="F7N-Na-EW4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gG1-8d-V5G"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="r9K-DL-wrp"/>
                     </view>
-                    <connections>
-                        <outlet property="bgImageView" destination="eMm-8M-jVo" id="gcj-EJ-vaC"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YrJ-Nt-hbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bg1-l8-cO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872.8" y="131.52709359605913"/>
+            <point key="canvasLocation" x="1873" y="133"/>
         </scene>
     </scenes>
     <resources>
