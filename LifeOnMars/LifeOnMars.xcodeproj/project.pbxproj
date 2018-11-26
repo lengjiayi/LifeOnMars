@@ -19,6 +19,9 @@
 		1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */; };
 		18CE3EAC21A8263200DC3CA0 /* connectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */; };
 		18CE3EAE21A8360500DC3CA0 /* friendInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE3EAD21A8360500DC3CA0 /* friendInfoBar.swift */; };
+		18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */; };
+		18DD625E21AC124100D5DA90 /* bubbleLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD625D21AC124100D5DA90 /* bubbleLogView.swift */; };
+		18DD626021AC24CA00D5DA90 /* waveMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD625F21AC24CA00D5DA90 /* waveMask.swift */; };
 		18EA5B3021A2D80E00E8E72C /* loginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA5B2F21A2D80E00E8E72C /* loginInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewCell.swift; sourceTree = "<group>"; };
 		18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionViewController.swift; sourceTree = "<group>"; };
 		18CE3EAD21A8360500DC3CA0 /* friendInfoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendInfoBar.swift; sourceTree = "<group>"; };
+		18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		18DD625D21AC124100D5DA90 /* bubbleLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bubbleLogView.swift; sourceTree = "<group>"; };
+		18DD625F21AC24CA00D5DA90 /* waveMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waveMask.swift; sourceTree = "<group>"; };
 		18EA5B2F21A2D80E00E8E72C /* loginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +105,11 @@
 				1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */,
 				1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */,
 				18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */,
+				18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */,
 				1894C8C121A4394D00A2D23B /* provinceInfo.plist */,
 				184A93DF21A18BAB007A77C3 /* Main.storyboard */,
+				18DD625D21AC124100D5DA90 /* bubbleLogView.swift */,
+				18DD625F21AC24CA00D5DA90 /* waveMask.swift */,
 				184A93E221A18BAB007A77C3 /* Assets.xcassets */,
 				184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */,
 				184A93E721A18BAB007A77C3 /* Info.plist */,
@@ -221,10 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD626021AC24CA00D5DA90 /* waveMask.swift in Sources */,
 				184A93DE21A18BAB007A77C3 /* LoginViewController.swift in Sources */,
 				1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */,
+				18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */,
 				184A93DC21A18BAB007A77C3 /* AppDelegate.swift in Sources */,
 				18CE3EAC21A8263200DC3CA0 /* connectionViewController.swift in Sources */,
+				18DD625E21AC124100D5DA90 /* bubbleLogView.swift in Sources */,
 				184A93FC21A194FA007A77C3 /* launchButton.swift in Sources */,
 				18EA5B3021A2D80E00E8E72C /* loginInfo.swift in Sources */,
 				1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */,
