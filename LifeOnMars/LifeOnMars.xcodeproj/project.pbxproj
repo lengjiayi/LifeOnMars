@@ -14,6 +14,11 @@
 		184A93E621A18BAB007A77C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */; };
 		184A93F121A18BAB007A77C3 /* LifeOnMarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93F021A18BAB007A77C3 /* LifeOnMarsTests.swift */; };
 		184A93FC21A194FA007A77C3 /* launchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93FB21A194FA007A77C3 /* launchButton.swift */; };
+		188116BE21AD6814000730B3 /* wavs in Resources */ = {isa = PBXBuildFile; fileRef = 188116BD21AD6813000730B3 /* wavs */; };
+		188116C021AD6868000730B3 /* audioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116BF21AD6868000730B3 /* audioHandler.swift */; };
+		188116C221AD68C2000730B3 /* MarsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C121AD68C2000730B3 /* MarsTranslator.swift */; };
+		188116C421AD7F7D000730B3 /* usrInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C321AD7F7D000730B3 /* usrInfoStruct.swift */; };
+		188116C621AD8525000730B3 /* hitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C521AD8525000730B3 /* hitsView.swift */; };
 		1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1894C8C121A4394D00A2D23B /* provinceInfo.plist */; };
 		1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */; };
 		1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */; };
@@ -47,6 +52,11 @@
 		184A93F021A18BAB007A77C3 /* LifeOnMarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeOnMarsTests.swift; sourceTree = "<group>"; };
 		184A93F221A18BAB007A77C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		184A93FB21A194FA007A77C3 /* launchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchButton.swift; sourceTree = "<group>"; };
+		188116BD21AD6813000730B3 /* wavs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wavs; sourceTree = "<group>"; };
+		188116BF21AD6868000730B3 /* audioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioHandler.swift; sourceTree = "<group>"; };
+		188116C121AD68C2000730B3 /* MarsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsTranslator.swift; sourceTree = "<group>"; };
+		188116C321AD7F7D000730B3 /* usrInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usrInfoStruct.swift; sourceTree = "<group>"; };
+		188116C521AD8525000730B3 /* hitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitsView.swift; sourceTree = "<group>"; };
 		1894C8C121A4394D00A2D23B /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = provinceInfo.plist; sourceTree = "<group>"; };
 		1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewController.swift; sourceTree = "<group>"; };
 		1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,8 +119,13 @@
 				1894C8C121A4394D00A2D23B /* provinceInfo.plist */,
 				184A93DF21A18BAB007A77C3 /* Main.storyboard */,
 				18DD625D21AC124100D5DA90 /* bubbleLogView.swift */,
+				188116C521AD8525000730B3 /* hitsView.swift */,
 				18DD625F21AC24CA00D5DA90 /* waveMask.swift */,
 				184A93E221A18BAB007A77C3 /* Assets.xcassets */,
+				188116BF21AD6868000730B3 /* audioHandler.swift */,
+				188116C321AD7F7D000730B3 /* usrInfoStruct.swift */,
+				188116C121AD68C2000730B3 /* MarsTranslator.swift */,
+				188116BD21AD6813000730B3 /* wavs */,
 				184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */,
 				184A93E721A18BAB007A77C3 /* Info.plist */,
 			);
@@ -211,6 +226,7 @@
 			files = (
 				1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */,
 				184A93E621A18BAB007A77C3 /* LaunchScreen.storyboard in Resources */,
+				188116BE21AD6814000730B3 /* wavs in Resources */,
 				184A93E321A18BAB007A77C3 /* Assets.xcassets in Resources */,
 				184A93E121A18BAB007A77C3 /* Main.storyboard in Resources */,
 			);
@@ -231,15 +247,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DD626021AC24CA00D5DA90 /* waveMask.swift in Sources */,
+				188116C021AD6868000730B3 /* audioHandler.swift in Sources */,
 				184A93DE21A18BAB007A77C3 /* LoginViewController.swift in Sources */,
 				1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */,
 				18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */,
 				184A93DC21A18BAB007A77C3 /* AppDelegate.swift in Sources */,
 				18CE3EAC21A8263200DC3CA0 /* connectionViewController.swift in Sources */,
 				18DD625E21AC124100D5DA90 /* bubbleLogView.swift in Sources */,
+				188116C621AD8525000730B3 /* hitsView.swift in Sources */,
 				184A93FC21A194FA007A77C3 /* launchButton.swift in Sources */,
 				18EA5B3021A2D80E00E8E72C /* loginInfo.swift in Sources */,
 				1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */,
+				188116C421AD7F7D000730B3 /* usrInfoStruct.swift in Sources */,
+				188116C221AD68C2000730B3 /* MarsTranslator.swift in Sources */,
 				18CE3EAE21A8360500DC3CA0 /* friendInfoBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

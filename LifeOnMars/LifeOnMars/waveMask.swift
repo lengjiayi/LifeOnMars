@@ -10,13 +10,13 @@ import UIKit
 
 class waveMask: UIView {
 
-    var curRadius:CGFloat = 100{
+    let thick:CGFloat = 30
+/*    override var frame: CGRect{
         didSet{
             setNeedsDisplay()
         }
     }
-    let thick:CGFloat = 30
-    
+ */
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.0);
@@ -27,12 +27,14 @@ class waveMask: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        
+        var curRadius:CGFloat = frame.width/2 - thick
         let g = UIGraphicsGetCurrentContext()!
-        let components:[CGFloat] = [0.0, 0.3, 1.0, 0.3,
+        let components:[CGFloat] = [0.0, 0.3, 1.0, 1.0,
                                     1.0, 0.0, 0.2, 0.0]
         let locations:[CGFloat] = [0.0, 1.0]
         let gradient = CGGradient(colorSpace: CGColorSpaceCreateDeviceRGB(), colorComponents: components, locations: locations, count: locations.count)!
-        let circleCenter = CGPoint(x: center.x, y: frame.height)
+        let circleCenter = CGPoint(x: frame.width/2, y: frame.height)
         g.drawRadialGradient(gradient, startCenter: circleCenter, startRadius: curRadius, endCenter: circleCenter, endRadius: curRadius + thick, options: .drawsAfterEndLocation)
         /* draw border
         let borderPath = UIBezierPath()

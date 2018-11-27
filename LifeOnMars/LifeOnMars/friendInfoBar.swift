@@ -57,8 +57,14 @@ class friendInfoBar: UIView {
         g.addLine(to: CGPoint(x: frame.width - 10, y: frame.height*2/3))
         g.strokePath()
     }
+    //MARK: Public Methods
+    func udpateInfo(_ info:usrInfoStruct){
+        friendNameLabel.text = info.usrname
+        friendGenderLabel.text = (info.gender == .Male) ? "男" : "女"
+        friendProvinceLabel.text = info.province
+    }
     
-    //MARK: Private Method
+    //MARK: Private Methods
     private func loadComponent(){
         
         friendNameLabel.textColor = UIColor.green

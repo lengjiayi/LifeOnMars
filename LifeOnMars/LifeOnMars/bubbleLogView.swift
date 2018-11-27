@@ -15,6 +15,7 @@ class bubbleLogView: UIView {
     
     //MARK: Properties
     let angleHeight:CGFloat = 15
+    
     override var frame: CGRect{
         didSet{
             fixLayout()
@@ -24,11 +25,16 @@ class bubbleLogView: UIView {
     //init UI
     override init(frame: CGRect) {
         super.init(frame: frame)
-        logText.text = "balabala"
+        logText.adjustsFontSizeToFitWidth = true
+        logText.textColor = UIColor.white
+        logText.text = "收到消息：balabala"
         addSubview(logText)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        logText.adjustsFontSizeToFitWidth = true
+        logText.textColor = UIColor.white
+        logText.text = "收到消息：balabala"
         addSubview(logText)
     }
     

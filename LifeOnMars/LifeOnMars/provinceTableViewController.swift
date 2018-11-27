@@ -133,9 +133,9 @@ class provinceTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showConnectView"{
             let nextView = segue.destination as! connectionViewController
-            nextView.usrname = self.usrname
-            nextView.gender = self.female
-            nextView.province = pname
+            nextView.myInfo.usrname = self.usrname
+            nextView.myInfo.gender = self.female
+            nextView.myInfo.province = pname
 
         }
     }
