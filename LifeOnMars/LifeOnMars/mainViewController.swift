@@ -22,14 +22,18 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
     let receiveLogView = bubbleLogView()
     let wave = waveMask()
     let inputTextField = UITextField()
+    let audioWave = AudioWaveView()
     
     //Properties
     let margin:CGFloat = 40
     var msgToSend:String = ""
     var myInfo = usrInfoStruct(usrname: "", gender: .Male, province: "")
     var friendInfo = usrInfoStruct(usrname: "", gender: .Male, province: "")
-    //debug
-    let debugButton = UIButton()
+    var mymsg:Bool = true
+
+    //Bt relates
+    var centerManager:btCenter? = nil
+    var commonManager:btCommon? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +51,13 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         view.addSubview(bgimageView)
         
         view.addSubview(wave)
+        //init audio wave
+        audioWave.frame = CGRect(x: 0, y: 0, width: view.frame.width - 30, height: view.frame.height / 8)
+        loc = view.center
+        loc.y = audioWave.frame.height
+        audioWave.center = loc
+        view.addSubview(audioWave)
+        audioWave.start()
         
         //init alien image
         loc = bgimageView.center
@@ -83,12 +94,13 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         loc.y = view.frame.height - 50 - margin
         inputTextField.center = loc
         view.addSubview(inputTextField)
-        
+        /*
         //for debug
-        debugButton.frame = CGRect(x: 50, y: 50, width: 20, height: 20)
+        debugButton.frame = CGRect(x: view.frame.height - 50, y: view.frame.width - 50, width: 20, height: 20)
         debugButton.backgroundColor = UIColor.white
         debugButton.addTarget(self, action: #selector(debugAction), for: .touchUpInside)
         view.addSubview(debugButton)
+ */
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,18 +129,54 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         WaveAnimation()
     }
 
+    func receiveMsg(data: String){
+        mymsg = false
+        msgToSend = data
+        audioWave.flat = !audioWave.flat
+        WaveAnimation()
+        perform(#selector(playaudio), with: self, afterDelay: 0.5)
+    }
     
     //MARK: Private Methods
     
     @objc private func sendMsg(){
-        playaudio()
+        mymsg = true
+        audioWave.flat = !audioWave.flat
+        WaveAnimation()
+        perform(#selector(playaudio), with: self, afterDelay: 0.5)
+        centerManager!.send(data: msgToSend)
     }
-    private func playaudio(){
+    
+    @objc private func playaudio(){
         if msgToSend.isEmpty{
             return
         }
-        let hex = translator.stringToHex(msg: msgToSend, province: "Cydonia")
-        audio.mergeWav(translator.hexToFile(msg: hex, gender: true))
+        var hex: [Int]
+        if(mymsg){
+            hex = translator.stringToHex(msg: msgToSend, province: myInfo.province)
+        }else {
+            hex = translator.stringToHex(msg: msgToSend, province: friendInfo.province)
+        }
+        var tmpgender = myInfo.gender
+        if !mymsg {
+            tmpgender = friendInfo.gender
+        }
+        let (str, hexArray) = translator.hexToFile(msg: hex, gender: tmpgender)
+        receiveLogView.logText.text = str
+        if !mymsg {
+            receiveLogView.logText.text = friendInfo.usrname + ": " + msgToSend
+        }
+        let (duration,tmpdata) = audio.mergeWav(hexArray)
+        if tmpdata != nil{
+            audioPlayer = try! AVAudioPlayer(data: tmpdata!)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            perform(#selector(silence), with: self, afterDelay: duration)
+            inputTextField.text = ""
+        }else{
+            print("return nil")
+        }
+        /*
         if let path = Bundle.main.path(forResource: "wavs", ofType: nil){
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: path+"/merge.wav"){
@@ -150,6 +198,7 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         else{
             fatalError("folder not found")
         }
+ */
     }
     
     private func reStartWave(){
@@ -163,6 +212,13 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         loc.y = view.frame.height - wave.frame.height/2
         wave.center = loc
         wave.alpha = 0.0
+    }
+    
+    private func Disapear(){
+        UIView.animate(withDuration: 0.3, animations: {
+            () -> Void in
+            self.receiveLogView.alpha = 0.0
+        })
     }
     
     private func WaveAnimation(){
@@ -197,4 +253,8 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
 
     }
 
+    @objc private func silence(){
+        self.audioWave.flat = true
+        Disapear()
+    }
 }

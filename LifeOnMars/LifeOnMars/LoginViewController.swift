@@ -39,9 +39,17 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     
     //MARK: Setup UIComponent
     func setUpUI(){
+        let bgimage = UIImage(named: "LoginBG")
+        var loc = view.center
+        var imgwidth = loc.x * 2
+        var imgheight = imgwidth / (bgimage?.size.width)!  * (bgimage?.size.height)!
+        imageMars.frame = CGRect(x: 0, y: 0, width: imgwidth, height: imgheight)
+        imageMars.image = bgimage
+        loc.y +=  view.center.y - imgheight/2
+        imageMars.center = loc
         //add launch button
         launchGo.frame = CGRect(x: 0, y: 0, width: 64, height: 86)
-        var loc = imageMars.center
+        loc = imageMars.center
         loc.y -= 70
         loc.x = view.center.x
         launchGo.center = loc
@@ -70,7 +78,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
 //        print(imageMars.center)
 //        print(view.center)
         loc = view.center
-        loc.y = imageMars.center.y + imageMars.frame.height/2
+        loc.y = view.frame.height - tipsTextField.frame.height
         tipsTextField.center = loc
         self.view.addSubview(tipsTextField)
         

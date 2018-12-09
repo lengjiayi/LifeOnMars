@@ -63,7 +63,7 @@ class bubbleLogView: UIView {
     
     //Private Methods
     private func fixLayout(){
-        var loc = center
+        var loc = CGPoint(x: frame.width/2, y: frame.height/2)
         loc.y -= angleHeight / 2
         logText.frame = CGRect(x: 0, y: 0, width: frame.width - 20, height: frame.height - 20 - angleHeight)
         logText.center = loc

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1844F94D21B18161005C8D97 /* AudioWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844F94C21B18161005C8D97 /* AudioWaveView.swift */; };
 		184A93DC21A18BAB007A77C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93DB21A18BAB007A77C3 /* AppDelegate.swift */; };
 		184A93DE21A18BAB007A77C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A93DD21A18BAB007A77C3 /* LoginViewController.swift */; };
 		184A93E121A18BAB007A77C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A93DF21A18BAB007A77C3 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1894C8C121A4394D00A2D23B /* provinceInfo.plist */; };
 		1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */; };
 		1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */; };
+		18B1895221B80BC300DD00B9 /* btCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1895121B80BC300DD00B9 /* btCenter.swift */; };
+		18B1895421B80C9300DD00B9 /* btCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1895321B80C9300DD00B9 /* btCommon.swift */; };
 		18CE3EAC21A8263200DC3CA0 /* connectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */; };
 		18CE3EAE21A8360500DC3CA0 /* friendInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE3EAD21A8360500DC3CA0 /* friendInfoBar.swift */; };
 		18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */; };
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1844F94C21B18161005C8D97 /* AudioWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWaveView.swift; sourceTree = "<group>"; };
 		184A93D821A18BAB007A77C3 /* LifeOnMars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeOnMars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184A93DB21A18BAB007A77C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184A93DD21A18BAB007A77C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		1894C8C121A4394D00A2D23B /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = provinceInfo.plist; sourceTree = "<group>"; };
 		1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewController.swift; sourceTree = "<group>"; };
 		1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewCell.swift; sourceTree = "<group>"; };
+		18B1895121B80BC300DD00B9 /* btCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = btCenter.swift; sourceTree = "<group>"; };
+		18B1895321B80C9300DD00B9 /* btCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = btCommon.swift; sourceTree = "<group>"; };
 		18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionViewController.swift; sourceTree = "<group>"; };
 		18CE3EAD21A8360500DC3CA0 /* friendInfoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendInfoBar.swift; sourceTree = "<group>"; };
 		18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 				1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */,
 				1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */,
 				18CE3EAB21A8263200DC3CA0 /* connectionViewController.swift */,
+				18B1895121B80BC300DD00B9 /* btCenter.swift */,
+				18B1895321B80C9300DD00B9 /* btCommon.swift */,
 				18DD625B21AC0BBD00D5DA90 /* mainViewController.swift */,
 				1894C8C121A4394D00A2D23B /* provinceInfo.plist */,
 				184A93DF21A18BAB007A77C3 /* Main.storyboard */,
@@ -125,6 +133,7 @@
 				188116BF21AD6868000730B3 /* audioHandler.swift */,
 				188116C321AD7F7D000730B3 /* usrInfoStruct.swift */,
 				188116C121AD68C2000730B3 /* MarsTranslator.swift */,
+				1844F94C21B18161005C8D97 /* AudioWaveView.swift */,
 				188116BD21AD6813000730B3 /* wavs */,
 				184A93E421A18BAB007A77C3 /* LaunchScreen.storyboard */,
 				184A93E721A18BAB007A77C3 /* Info.plist */,
@@ -252,14 +261,17 @@
 				1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */,
 				18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */,
 				184A93DC21A18BAB007A77C3 /* AppDelegate.swift in Sources */,
+				18B1895221B80BC300DD00B9 /* btCenter.swift in Sources */,
 				18CE3EAC21A8263200DC3CA0 /* connectionViewController.swift in Sources */,
 				18DD625E21AC124100D5DA90 /* bubbleLogView.swift in Sources */,
 				188116C621AD8525000730B3 /* hitsView.swift in Sources */,
 				184A93FC21A194FA007A77C3 /* launchButton.swift in Sources */,
 				18EA5B3021A2D80E00E8E72C /* loginInfo.swift in Sources */,
+				18B1895421B80C9300DD00B9 /* btCommon.swift in Sources */,
 				1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */,
 				188116C421AD7F7D000730B3 /* usrInfoStruct.swift in Sources */,
 				188116C221AD68C2000730B3 /* MarsTranslator.swift in Sources */,
+				1844F94D21B18161005C8D97 /* AudioWaveView.swift in Sources */,
 				18CE3EAE21A8360500DC3CA0 /* friendInfoBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +429,7 @@
 				DEVELOPMENT_TEAM = ZH6K9L684V;
 				INFOPLIST_FILE = LifeOnMars/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.LifeOnMars;
+				PRODUCT_BUNDLE_IDENTIFIER = ljy.LifeOnMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,7 +444,7 @@
 				DEVELOPMENT_TEAM = ZH6K9L684V;
 				INFOPLIST_FILE = LifeOnMars/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.LifeOnMars;
+				PRODUCT_BUNDLE_IDENTIFIER = ljy.LifeOnMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

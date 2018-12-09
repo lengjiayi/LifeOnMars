@@ -19,9 +19,9 @@ class audioHandler{
     let outputPath = "/merge.wav"
     
     //MARK: Public Methods
-    func mergeWav(_ filenames: [String]){
+    func mergeWav(_ filenames: [String]) -> (Double,Data?){
         if(filenames.count == 0 ){
-            return
+            return (0.0, nil)
         }
         var datas: [Data] = []
         for file in filenames{
@@ -46,14 +46,14 @@ class audioHandler{
         for i in 0...3{
             outputAudio[DATA_SIZE_START+i] = tmpbytes[i]
         }
-        checkData(outputAudio)
-        saveWav(outputAudio)
+        let duration = checkData(outputAudio)
+        return (duration, outputAudio)
     }
     
     //MARK: Private Methods
     private func loadWav(_ filename: String) -> Data {
         if let path = Bundle.main.path(forResource: "wavs", ofType: nil){
-            print(path)
+//            print(path)
             let readHandler = try! FileHandle(forReadingAtPath: path+"/"+filename)
             let data = readHandler?.readDataToEndOfFile()
             return data!
@@ -98,7 +98,7 @@ class audioHandler{
         return ret
     }
     
-    private func checkData(_ data: Data){
+    private func checkData(_ data: Data) -> Double{
         let filesize = littleEndianToInt(data.subdata(in: Range(FILESIZE_START...FILESIZE_START+3))) + 8
         let numchannels = littleEndianToInt(data.subdata(in: Range(NUMCHANNELS_START...NUMCHANNELS_START+1)))
         let samplerate = littleEndianToInt(data.subdata(in: Range(SAMPLERATE_START...SAMPLERATE_START+3)))
@@ -115,6 +115,7 @@ class audioHandler{
             数据大小：\(datasize)    字节
             
             """)
+        return Double(datasize)/Double(byterate)
     }
     
     private func getAudioData(_ data: Data) -> Data{

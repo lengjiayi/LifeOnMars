@@ -58,9 +58,17 @@ class friendInfoBar: UIView {
         g.strokePath()
     }
     //MARK: Public Methods
-    func udpateInfo(_ info:usrInfoStruct){
+    func updateInfo(_ info:usrInfoStruct){
         friendNameLabel.text = info.usrname
-        friendGenderLabel.text = (info.gender == .Male) ? "男" : "女"
+        switch info.gender {
+
+        case .Male:
+            friendGenderLabel.text = "男"
+        case .Female:
+            friendGenderLabel.text = "女"
+        case .Special:
+            friendGenderLabel.text = "海绵宝宝"
+        }
         friendProvinceLabel.text = info.province
     }
     

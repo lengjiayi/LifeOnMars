@@ -16,8 +16,9 @@ class loginInfo: UIView , UITextFieldDelegate{
     enum Sex{
         case Male
         case Female
+        case Special
     }
-    var gender:Sex = .Male
+    var gender:Sex = .Special
 
     //UIComponents
     
@@ -85,7 +86,7 @@ class loginInfo: UIView , UITextFieldDelegate{
     
     //MARK: Private Method
     @objc private func femaleIsClicked(){
-        gender = .Male
+        gender = .Female
         genderFemaleButton.backgroundColor = lightblue
         genderMaleButton.backgroundColor = UIColor.white
         genderFemaleButton.isSelected = true
@@ -159,7 +160,6 @@ class loginInfo: UIView , UITextFieldDelegate{
         genderMaleButton.center = loc
         loc.x = frame.width - loc.x
         genderFemaleButton.center = loc
-
         
     }
 }

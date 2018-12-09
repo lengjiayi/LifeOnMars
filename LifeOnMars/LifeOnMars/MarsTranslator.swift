@@ -9,7 +9,7 @@
 import Foundation
 class MarsTranslator{
 
-    
+    static let alphas = [ "A","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І","Ї","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ю","Я"]
     //MARK: Accent dictionary
     let AccentList:[[Int:Int]]=[
         [
@@ -77,25 +77,38 @@ class MarsTranslator{
     }
     
     //convert hex array to filelist
-    func hexToFile(msg hexArray: [Int], gender male:Bool) -> [String]{
+    func hexToFile(msg hexArray: [Int], gender gender:loginInfo.Sex) -> (String, [String]){
         var files:[String] = []
-        if !male{
+        var str: String = ""
+        for x in hexArray{
+            if x>0{
+                str += MarsTranslator.alphas[x-1]
+            }
+        }
+        switch gender {
+        case .Female:
             for x in hexArray{
                 if(x>0){
                     files.append("\(x)_female.wav")
                 }
             }
             files.append("end_female.wav")
-        }
-        else{
+        case .Male:
             for x in hexArray{
                 if(x>0){
                     files.append("\(x)_male.wav")
                 }
             }
             files.append("end_male.wav")
+        case .Special:
+            for x in hexArray{
+                if(x>0){
+                    files.append("\(x)_bob.wav")
+                }
+            }
+            files.append("end_bob.wav")
         }
-        return files
+        return (str,files)
     }
     
     //MARK: private Methods
