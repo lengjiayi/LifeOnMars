@@ -128,10 +128,12 @@ class connectionViewController: UIViewController {
     //Mark Private Methods
     @objc private func jumptonext()
     {
+        /*for test
         if index<0 {
             return
         }
         centerManager!.link(index: index)
+        */
         self.performSegue(withIdentifier: "showMainView", sender: "parameters")
     }
     

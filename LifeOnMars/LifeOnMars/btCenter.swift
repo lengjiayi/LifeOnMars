@@ -116,4 +116,13 @@ class btCenter: UIView, CBCentralManagerDelegate, CBPeripheralDelegate{
         mperipheral = pers[index]
         centerManager?.connect(mperipheral!, options: nil)
     }
+    
+    /** 断开连接 */
+    func disconnect(){
+        infos.removeAll()
+        for x in pers{
+            centerManager?.cancelPeripheralConnection(x)
+        }
+        pers.removeAll()
+    }
 }

@@ -20,6 +20,7 @@
 		188116C221AD68C2000730B3 /* MarsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C121AD68C2000730B3 /* MarsTranslator.swift */; };
 		188116C421AD7F7D000730B3 /* usrInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C321AD7F7D000730B3 /* usrInfoStruct.swift */; };
 		188116C621AD8525000730B3 /* hitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188116C521AD8525000730B3 /* hitsView.swift */; };
+		1890F2E421E37BE500A23214 /* mouthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890F2E321E37BE500A23214 /* mouthView.swift */; };
 		1894C8C221A4394D00A2D23B /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1894C8C121A4394D00A2D23B /* provinceInfo.plist */; };
 		1894C8C421A44B0200A2D23B /* provinceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */; };
 		1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		188116C121AD68C2000730B3 /* MarsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsTranslator.swift; sourceTree = "<group>"; };
 		188116C321AD7F7D000730B3 /* usrInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usrInfoStruct.swift; sourceTree = "<group>"; };
 		188116C521AD8525000730B3 /* hitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitsView.swift; sourceTree = "<group>"; };
+		1890F2E321E37BE500A23214 /* mouthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mouthView.swift; sourceTree = "<group>"; };
 		1894C8C121A4394D00A2D23B /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = provinceInfo.plist; sourceTree = "<group>"; };
 		1894C8C321A44B0200A2D23B /* provinceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewController.swift; sourceTree = "<group>"; };
 		1894C8C721A44BD800A2D23B /* provinceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provinceTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				188116C521AD8525000730B3 /* hitsView.swift */,
 				18DD625F21AC24CA00D5DA90 /* waveMask.swift */,
 				184A93E221A18BAB007A77C3 /* Assets.xcassets */,
+				1890F2E321E37BE500A23214 /* mouthView.swift */,
 				188116BF21AD6868000730B3 /* audioHandler.swift */,
 				188116C321AD7F7D000730B3 /* usrInfoStruct.swift */,
 				188116C121AD68C2000730B3 /* MarsTranslator.swift */,
@@ -259,6 +262,7 @@
 				188116C021AD6868000730B3 /* audioHandler.swift in Sources */,
 				184A93DE21A18BAB007A77C3 /* LoginViewController.swift in Sources */,
 				1894C8C821A44BD800A2D23B /* provinceTableViewCell.swift in Sources */,
+				1890F2E421E37BE500A23214 /* mouthView.swift in Sources */,
 				18DD625C21AC0BBD00D5DA90 /* mainViewController.swift in Sources */,
 				184A93DC21A18BAB007A77C3 /* AppDelegate.swift in Sources */,
 				18B1895221B80BC300DD00B9 /* btCenter.swift in Sources */,

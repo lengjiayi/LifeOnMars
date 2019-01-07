@@ -23,6 +23,8 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
     let wave = waveMask()
     let inputTextField = UITextField()
     let audioWave = AudioWaveView()
+    let disconnectButton = UIButton()
+    var mouth:mouthView? = nil
     
     //Properties
     let margin:CGFloat = 40
@@ -61,7 +63,7 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         
         //init alien image
         loc = bgimageView.center
-        let alienimage = UIImage(named: "alien")
+        let alienimage = UIImage(named: "alienpokerface")
         imgwidth = imgwidth / 2
         imgheight = imgwidth / (alienimage?.size.width)! * (alienimage?.size.height)!
         alienImageView.frame = CGRect(x: 0, y: 0, width: imgwidth, height: imgheight)
@@ -74,7 +76,12 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         alienImageView.isUserInteractionEnabled = true
         view.addSubview(alienImageView)
 
-
+        //init alien mouth
+        mouth = mouthView(frame: CGRect(x: 0, y: 0, width: imgwidth/5, height: imgwidth/5*3/4))
+        mouth!.center = CGPoint(x: loc.x, y: loc.y + imgheight/8)
+        view.addSubview(mouth!)
+        
+        //init wave
         reStartWave()
         view.addSubview(receiveLogView)
         
@@ -94,6 +101,14 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
         loc.y = view.frame.height - 50 - margin
         inputTextField.center = loc
         view.addSubview(inputTextField)
+        
+        //disconnect button
+        disconnectButton.setTitle("断开连接", for: .normal)
+        disconnectButton.titleLabel?.textColor = UIColor.white
+        disconnectButton.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        disconnectButton.center = CGPoint(x: view.center.x, y: view.frame.height-25)
+        disconnectButton.addTarget(self, action: #selector(disconnect), for: .touchUpInside)
+        view.addSubview(disconnectButton)
         /*
         //for debug
         debugButton.frame = CGRect(x: view.frame.height - 50, y: view.frame.width - 50, width: 20, height: 20)
@@ -109,7 +124,16 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
     }
     
     //MARK: TextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2, animations: {() -> Void in
+                self.view.center = CGPoint(x: self.view.center.x, y: 0)
+        })
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        UIView.animate(withDuration: 0.2, animations: {() -> Void in
+            self.view.center = CGPoint(x: self.view.center.x, y: self.view.frame.height/2)
+        })
         msgToSend = inputTextField.text ?? ""
         inputTextField.resignFirstResponder()
         return true
@@ -125,6 +149,12 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
     */
     
     //MARK: Actions
+    
+    @objc func disconnect(){
+        centerManager?.disconnect()
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func debugAction(){
         WaveAnimation()
     }
@@ -171,6 +201,7 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
             audioPlayer = try! AVAudioPlayer(data: tmpdata!)
             audioPlayer.prepareToPlay()
             audioPlayer.play()
+            mouth?.state = .talk
             perform(#selector(silence), with: self, afterDelay: duration)
             inputTextField.text = ""
         }else{
@@ -254,7 +285,10 @@ class mainViewController: UIViewController ,UITextFieldDelegate{
     }
 
     @objc private func silence(){
+        // stop playing wave
         self.audioWave.flat = true
+        // close the mouth
+        mouth?.state = .slience
         Disapear()
     }
 }
